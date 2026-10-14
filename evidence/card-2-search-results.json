@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-14T07:41:42.446Z",
-  "inspectedSourceHead": "d8d706b04501f9c36aa9bf720829970de2018503",
+  "checkedAt": "2026-10-14T07:30:38.714Z",
+  "inspectedSourceHead": "0737c5859b841feddb7f24159babeea389667dda",
   "scope": "Keyless JPY/KRW public data board",
   "rules": [
     "private-key",
@@ -13,11 +13,85 @@
     "url-credential",
     "url-key"
   ],
-  "trackedFiles": 58,
-  "gitObjects": 63,
-  "archiveEntries": 0,
+  "trackedFiles": 17,
+  "gitObjects": 27,
+  "archiveEntries": 6,
   "findings": [],
-  "network": [],
+  "network": [
+    {
+      "url": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/",
+      "finalURL": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/",
+      "status": 200,
+      "credentialsSent": false,
+      "requestAuthorization": false,
+      "requestCookie": false,
+      "responseSecretMatches": 0
+    },
+    {
+      "url": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/app.mjs",
+      "finalURL": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/app.mjs",
+      "status": 200,
+      "credentialsSent": false,
+      "requestAuthorization": false,
+      "requestCookie": false,
+      "responseSecretMatches": 0
+    },
+    {
+      "url": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/core.mjs",
+      "finalURL": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/core.mjs",
+      "status": 200,
+      "credentialsSent": false,
+      "requestAuthorization": false,
+      "requestCookie": false,
+      "responseSecretMatches": 0
+    },
+    {
+      "url": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/style.css",
+      "finalURL": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/style.css",
+      "status": 200,
+      "credentialsSent": false,
+      "requestAuthorization": false,
+      "requestCookie": false,
+      "responseSecretMatches": 0
+    },
+    {
+      "url": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/observations.json",
+      "finalURL": "https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site/observations.json",
+      "status": 200,
+      "credentialsSent": false,
+      "requestAuthorization": false,
+      "requestCookie": false,
+      "responseSecretMatches": 0
+    },
+    {
+      "url": "https://api.frankfurter.dev/v2/providers/ecb/rate/JPY/KRW",
+      "finalURL": "https://api.frankfurter.dev/v2/providers/ecb/rate/JPY/KRW",
+      "status": 200,
+      "credentialsSent": false,
+      "requestAuthorization": false,
+      "requestCookie": false,
+      "responseSecretMatches": 0,
+      "rawResponse": "{\"date\":\"2026-10-13\",\"base\":\"JPY\",\"quote\":\"KRW\",\"rate\":8.4835}"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/jwonnlee00-lab/aleph-04-data-board/main/dist/observations.json",
+      "finalURL": "https://raw.githubusercontent.com/jwonnlee00-lab/aleph-04-data-board/main/dist/observations.json",
+      "status": 200,
+      "credentialsSent": false,
+      "requestAuthorization": false,
+      "requestCookie": false,
+      "responseSecretMatches": 0
+    },
+    {
+      "url": "https://github.com/jwonnlee00-lab/aleph-04-data-board",
+      "finalURL": "https://github.com/jwonnlee00-lab/aleph-04-data-board",
+      "status": 200,
+      "credentialsSent": false,
+      "requestAuthorization": false,
+      "requestCookie": false,
+      "responseSecretMatches": 0
+    }
+  ],
   "limitations": [
     "Pattern-based inspection cannot prove absence of every possible unknown secret format.",
     "Network evidence below is anonymous HTTP request/response inspection, not a browser DevTools HAR capture."
