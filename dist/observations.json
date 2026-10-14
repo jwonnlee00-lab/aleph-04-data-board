@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "kstDate": "2026-10-14",
+      "collectedAt": "2026-10-14T07:11:22.562Z",
+      "source": "https://api.frankfurter.dev/v2/providers/ecb/rate/USD/KRW",
+      "value": {
+        "date": "2026-10-13",
+        "base": "USD",
+        "quote": "KRW",
+        "rate": 1341.45
+      },
+      "sha256": "d849e03d1c7ed8b059dd6b5dc68e674f0fe6d850b5501e5ebf8226b110dca7d5"
+    }
+  ],
+  "lastAttempt": {
+    "at": "2026-10-14T07:11:22.562Z",
+    "kstDate": "2026-10-14",
+    "ok": true,
+    "reason": null
+  }
+}
