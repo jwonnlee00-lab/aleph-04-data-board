@@ -1,11 +1,12 @@
 import {kstDate,receive,compare,API} from './core.mjs';
 import {resetEvaluationState,applySuccessfulReading,applyError} from './state.mjs';
+import {normalizeLive} from './daily.mjs';
 const $=id=>document.getElementById(id);
 const KEY='aleph04-jpy-last-good-v1';
 const SHARED='https://raw.githubusercontent.com/jwonnlee00-lab/aleph-04-data-board/main/dist/observations.json';
 let archive={version:1,records:[],lastAttempt:null},last=null,busy=false,realStatus='공유 기록 확인 중',realBadge='보존된 기록',realClass='warn',remoteFailed=false;
 let liveState=resetEvaluationState();
-function saveLive(reading){liveState=applySuccessfulReading(liveState,{signal_id:'jpy-krw-100',normalized_value:reading.value.rate*100,unit:'KRW/100JPY',source_name:'Frankfurter / ECB',source_url:API,source_time:null,fetched_at:reading.collectedAt,record_timezone:'Asia/Seoul',record_date:kstDate(new Date(reading.collectedAt))});}
+function saveLive(reading){liveState=applySuccessfulReading(liveState,normalizeLive(reading.value,reading.collectedAt));}
 const fmt=n=>n.toLocaleString('ko-KR',{minimumFractionDigits:2,maximumFractionDigits:2});
 const time=t=>new Date(t).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false});
 const messages={network:'연결에 실패했습니다. 오프라인·DNS·CORS 등 원인은 이 화면에서 구분할 수 없습니다.',timeout:'8초 안에 응답이 오지 않았습니다. 원천의 현재 값은 확인하지 못했습니다.',http:'원천이 HTTP 오류를 반환했습니다. 재시도 후 확인하세요.',invalid:'응답의 형식이나 값이 올바르지 않아 사용하지 않았습니다.',stale:'기준일이 5일 넘게 지났거나 날짜가 역행했습니다. 새 정상값으로 사용하지 않았습니다.'};
@@ -18,7 +19,7 @@ function render(){
   $('source-date').textContent=last?.value.date??'미확인';
   $('received').textContent=last?time(last.collectedAt):'정상 수신 기록 없음';
   const comparison=compare(archive.records);
-  $('delta').textContent=comparison?`어제 대비 ${comparison.delta>0?'+':''}${fmt(comparison.delta*100)}원 / 100엔 (${comparison.percent>0?'+':''}${comparison.percent.toFixed(2)}%) · 실제 일별 첫 기록 비교`:'어제 대비 미확인 · 오늘과 어제의 실제 기록이 모두 필요합니다.';
+  $('delta').textContent=comparison?`어제 대비 ${comparison.delta>0?'+':''}${fmt(comparison.delta*100)}원 / 100엔 (${comparison.percent>0?'+':''}${comparison.percent.toFixed(2)}%) · 실제 일별 최신 기록 비교`:'어제 대비 미확인 · 오늘과 어제의 실제 기록이 모두 필요합니다.';
   $('records').replaceChildren();
   for(const record of [...archive.records].reverse()){
     const row=document.createElement('tr');
@@ -29,7 +30,7 @@ function render(){
   const count=new Set(archive.records.map(r=>r.kstDate)).size;
   $('progress').textContent=`서로 다른 실제 KST 날짜 ${count}건 / 최소 2건 ${count>=2?'✓':'· 두 번째 실제 수집 대기'}`;
   $('record-status').textContent=(remoteFailed?'공유 기록 서버 조회 실패 · 배포에 포함된 보존본을 표시합니다. ':'GitHub에 보존된 공유 기록입니다. ')+(archive.lastAttempt?`최근 수집: ${time(archive.lastAttempt.at)} · ${archive.lastAttempt.ok?'정상':`실패 (${archive.lastAttempt.reason})`}`:'수집 상태 미확인');
-  const proof=archive.records[0];
+  const proof=archive.firstObservation??archive.records[0];
   if(proof){
     $('proof-raw').textContent=proof.rawResponse??'原 응답 미보존';
     $('proof-stored').textContent=JSON.stringify(proof.value,null,2);

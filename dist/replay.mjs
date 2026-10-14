@@ -23,13 +23,13 @@ function render(){
  $('replay-log').textContent=events.join('\n');
  $('replay-json').textContent=JSON.stringify(state,null,2);
 }
-function lock(value){busy=value;for(const id of ['simulate','retry-replay','reset-replay','baseline-replay','normal-d2'])$(id).disabled=value;}
+function lock(value){busy=value;for(const id of ['simulate','retry-replay','reset-replay','baseline-replay','normal-d2','daily-replay'])$(id).disabled=value;}
 function apply(name){
  const fixture=fixtures.get(name);state=runFixture(state,fixture);
  events.push(`${fixture.fixture_id}: ${state.current_reading?.normalized_value??'—'} / ${state.status.freshness} / ${state.status.error_code} / 行 ${state.daily_readings.length}`);
  render();
 }
-function reset(){state=resetEvaluationState();events=[];render();}
+function reset(){state=resetEvaluationState();events=[];$('daily-summary').textContent='';render();}
 function baseline(){reset();apply('normal-d1-a');apply('normal-d1-b');}
 async function fail(){
  if(busy)return;lock(true);baseline();
@@ -43,6 +43,7 @@ $('retry-replay').addEventListener('click',()=>{if(!busy)apply('recover-d2');});
 $('baseline-replay').addEventListener('click',()=>{if(!busy)baseline();});
 $('reset-replay').addEventListener('click',()=>{if(!busy)reset();});
 $('normal-d2').addEventListener('click',()=>{if(!busy)apply('normal-d2');});
+$('daily-replay').addEventListener('click',()=>{if(busy)return;reset();const counts=[0];for(const name of ['normal-d1-a','normal-d1-b','normal-d1-b','normal-d2']){apply(name);counts.push(state.daily_readings.length);}$('daily-summary').textContent='카드 4 시험 통과 · 행 수 '+counts.join(' → ')+' · 같은 날 세 번은 같은 record ID, 다음 날짜는 새 ID';});
 $('export-replay').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([JSON.stringify({synthetic:true,package_id:'aleph-t04-real-information-board-public-contract-v2',events,state},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='synthetic-replay-state.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
 async function boot(){lock(true);try{for(const name of files){const response=await fetch(`./fixtures/${name}.json`,{signal:AbortSignal.timeout(8000)});if(!response.ok)throw Error('fixture unavailable');fixtures.set(name,await response.json());}baseline();lock(false);}catch{$('lab').textContent='공개 fixture를 읽지 못했습니다. 페이지를 새로고침하세요. 합성 결과를 만들어 표시하지 않습니다.';}}
 boot();

@@ -1,0 +1,90 @@
+{
+  "checkedAt": "2026-10-14T07:56:37.853Z",
+  "timezone": "Asia/Seoul",
+  "uniqueKey": [
+    "signal_id",
+    "record_date"
+  ],
+  "updateRule": "upsert latest successful reading; preserve record_id and first_fetched_at",
+  "syntheticOnly": true,
+  "pass": true,
+  "steps": [
+    {
+      "run": 1,
+      "fixture": "T04-NORMAL-D1-A",
+      "utc": "2026-08-24T00:00:00.000Z",
+      "kstDate": "2026-08-24",
+      "rowsBefore": 0,
+      "rowsAfter": 1,
+      "recordId": "demo-aleph-demo-index-2026-08-24",
+      "value": 100
+    },
+    {
+      "run": 2,
+      "fixture": "T04-NORMAL-D1-B",
+      "utc": "2026-08-24T09:00:00.000Z",
+      "kstDate": "2026-08-24",
+      "rowsBefore": 1,
+      "rowsAfter": 1,
+      "recordId": "demo-aleph-demo-index-2026-08-24",
+      "value": 105
+    },
+    {
+      "run": 3,
+      "fixture": "T04-NORMAL-D1-B",
+      "utc": "2026-08-24T09:00:00.000Z",
+      "kstDate": "2026-08-24",
+      "rowsBefore": 1,
+      "rowsAfter": 1,
+      "recordId": "demo-aleph-demo-index-2026-08-24",
+      "value": 105
+    },
+    {
+      "run": 4,
+      "fixture": "T04-NORMAL-D2",
+      "utc": "2026-08-25T00:00:00.000Z",
+      "kstDate": "2026-08-25",
+      "rowsBefore": 1,
+      "rowsAfter": 2,
+      "recordId": "demo-aleph-demo-index-2026-08-25",
+      "value": 120
+    }
+  ],
+  "liveStorageSyntheticClock": [
+    {
+      "utc": "2026-08-24T14:00:00.000Z",
+      "kstDate": "2026-08-24",
+      "rowsBefore": 0,
+      "rowsAfter": 1,
+      "recordId": "live-jpy-krw-100-2026-08-24",
+      "value": 8.1
+    },
+    {
+      "utc": "2026-08-24T14:30:00.000Z",
+      "kstDate": "2026-08-24",
+      "rowsBefore": 1,
+      "rowsAfter": 1,
+      "recordId": "live-jpy-krw-100-2026-08-24",
+      "value": 8.2
+    },
+    {
+      "utc": "2026-08-24T14:59:59.999Z",
+      "kstDate": "2026-08-24",
+      "rowsBefore": 1,
+      "rowsAfter": 1,
+      "recordId": "live-jpy-krw-100-2026-08-24",
+      "value": 8.3
+    },
+    {
+      "utc": "2026-08-24T15:00:00.000Z",
+      "kstDate": "2026-08-25",
+      "rowsBefore": 1,
+      "rowsAfter": 2,
+      "recordId": "live-jpy-krw-100-2026-08-25",
+      "value": 8.4
+    }
+  ],
+  "actualKstDates": [
+    "2026-10-14"
+  ]
+}
