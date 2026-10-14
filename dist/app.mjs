@@ -1,11 +1,16 @@
-import {kstDate,receive,compare} from './core.mjs';
+import {kstDate,receive,compare,API} from './core.mjs';
+import {resetEvaluationState,applySuccessfulReading,applyError} from './state.mjs';
 const $=id=>document.getElementById(id);
 const KEY='aleph04-jpy-last-good-v1';
 const SHARED='https://raw.githubusercontent.com/jwonnlee00-lab/aleph-04-data-board/main/dist/observations.json';
 let archive={version:1,records:[],lastAttempt:null},last=null,busy=false,realStatus='공유 기록 확인 중',realBadge='보존된 기록',realClass='warn',remoteFailed=false;
+let liveState=resetEvaluationState();
+function saveLive(reading){liveState=applySuccessfulReading(liveState,{signal_id:'jpy-krw-100',normalized_value:reading.value.rate*100,unit:'KRW/100JPY',source_name:'Frankfurter / ECB',source_url:API,source_time:null,fetched_at:reading.collectedAt,record_timezone:'Asia/Seoul',record_date:kstDate(new Date(reading.collectedAt))});}
 const fmt=n=>n.toLocaleString('ko-KR',{minimumFractionDigits:2,maximumFractionDigits:2});
 const time=t=>new Date(t).toLocaleString('ko-KR',{timeZone:'Asia/Seoul',hour12:false});
 const messages={network:'연결에 실패했습니다. 오프라인·DNS·CORS 등 원인은 이 화면에서 구분할 수 없습니다.',timeout:'8초 안에 응답이 오지 않았습니다. 원천의 현재 값은 확인하지 못했습니다.',http:'원천이 HTTP 오류를 반환했습니다. 재시도 후 확인하세요.',invalid:'응답의 형식이나 값이 올바르지 않아 사용하지 않았습니다.',stale:'기준일이 5일 넘게 지났거나 날짜가 역행했습니다. 새 정상값으로 사용하지 않았습니다.'};
+messages.auth='외부 원천이 401/403으로 요청을 거절했습니다. 원천의 공개 접근 상태를 확인한 뒤 다시 시도하세요. 이 앱의 로그인을 요구하는 뜻이 아닙니다.';
+messages.rate_limit='외부 원천의 호출 제한(429)입니다. 반복 호출을 멈추고 원천의 제한이 풀린 뒤 다시 시도하세요.';
 function setStatus(text,badge,cls=''){ $('status').textContent=text;$('badge').textContent=badge;$('badge').className='badge '+cls; }
 function render(){
   $('clock').textContent=kstDate()+' · KST';
@@ -32,23 +37,21 @@ function render(){
   }
 }
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(last));}catch{$('storage').textContent='브라우저 저장 실패 · 공유 기록은 보존됩니다.';}}
-function lock(v){busy=v;for(const id of ['refresh','simulate','restore'])$(id).disabled=v;}
-async function refresh(mode='live'){
+function lock(v){busy=v;$('refresh').disabled=v;}
+async function refresh(){
   if(busy)return;lock(true);
-  const synthetic=mode!=='live',before=JSON.stringify(last);
-  $('attempt').textContent=time(new Date().toISOString())+(synthetic?' · 합성 재생':'');
-  setStatus(synthetic?'합성 실패를 재생 중입니다. 실제 원천에 요청하지 않습니다.':'공개 원천에 요청 중입니다. 마지막 정상값을 유지합니다.',synthetic?'합성 재생 중':'수신 중','warn');
-  const result=await receive(fetch,mode,new Date(),last?.value??null,synthetic?800:8000);
+  $('attempt').textContent=time(new Date().toISOString());
+  setStatus('공개 원천에 요청 중입니다. 마지막 정상값을 유지합니다.','수신 중','warn');
+  const result=await receive(fetch,'live',new Date(),last?.value??null,8000);
   if(result.ok){
-    last={value:result.data,collectedAt:new Date().toISOString()};persist();render();
+    last={value:result.data,collectedAt:new Date().toISOString()};saveLive(last);persist();render();
     realBadge=result.data.date===kstDate()?'정상 수신':'정상 수신 · 이전 기준일';realClass=result.data.date===kstDate()?'':'warn';
     realStatus='실제 원천에서 정상 응답을 받았습니다. '+(result.data.date===kstDate()?'':'원천 기준일은 KST 오늘보다 앞섭니다. 주말·휴일·공표 시차일 수 있습니다. ')+'이 기기에 마지막 정상값을 저장했습니다. 공유 일별 기록은 별도 실제 수집 작업이 보존합니다.';
   } else {
     const explanation=messages[result.reason]+' '+(last?'표시값은 마지막 정상 수신값이며 현재 값은 미확인입니다.':'보존된 정상값이 없어 값을 표시하지 않습니다.');
-    if(synthetic){setStatus('[합성 재생] '+explanation,'합성 실패 · '+result.reason,'fail');$('lab').textContent=`${mode}: ${JSON.stringify(last)===before?'통과 · 마지막 정상값 유지':'실패 · 값 변경'} / 실제 일별 기록 ${archive.records.length}건 보존`;}
-    else {realBadge='수신 실패 · '+result.reason;realClass='fail';realStatus=explanation;}
+    const code={network:'offline',timeout:'timeout',http:'schema_error',invalid:'schema_error',stale:'schema_error'}[result.reason]??result.reason;liveState=applyError(liveState,code);realBadge='오래된 값 · stale / '+code;realClass='fail';realStatus=explanation+' 다시 시도: 실제 데이터 다시 확인 버튼을 누르세요.';
   }
-  if(!synthetic){setStatus(realStatus,realBadge,realClass);$('lab').textContent='실제 상태를 표시 중입니다. 실패 재생은 일별 기록에 포함되지 않습니다.';}
+  setStatus(realStatus,realBadge,realClass);
   lock(false);
 }
 async function getJSON(url){const response=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(8000)});if(!response.ok)throw Error('fetch');return response.json();}
@@ -59,11 +62,11 @@ async function boot(){
   archive.records.sort((a,b)=>a.kstDate.localeCompare(b.kstDate));
   last=archive.records.at(-1)??null;
   try{const cached=JSON.parse(localStorage.getItem(KEY));if(cached?.value?.base==='JPY'&&cached.value.quote==='KRW'&&typeof cached.value.rate==='number'&&Number.isFinite(cached.value.rate)&&cached.value.rate>0&&Number.isFinite(Date.parse(cached.collectedAt))&&(!last||Date.parse(cached.collectedAt)>Date.parse(last.collectedAt)))last=cached;}catch{$('storage').textContent='브라우저 저장소 사용 불가 · 공유 기록으로 확인';}
+  for(const record of archive.records)saveLive(record);
+  if(last)saveLive(last);
   render();realStatus=last?'보존된 마지막 정상값입니다. 아직 이번 방문의 원천 응답을 확인하지 않았습니다.':'정상 수신 기록이 없습니다.';setStatus(realStatus,realBadge,realClass);
   await refresh();
 }
 $('refresh').addEventListener('click',()=>refresh());
-$('simulate').addEventListener('click',()=>refresh($('scenario').value));
-$('restore').addEventListener('click',()=>{setStatus(realStatus,realBadge,realClass);$('attempt').textContent='실제 상태 복귀 · '+time(new Date().toISOString());$('lab').textContent='합성 재생이 끝났습니다. 실제 상태와 기록을 표시합니다.';});
 $('export').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([JSON.stringify(archive,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='actual-kst-observations.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
 boot().catch(()=>{lock(false);setStatus('화면 초기화에 실패했습니다. 새로고침 후 다시 확인하세요.','초기화 실패','fail');});

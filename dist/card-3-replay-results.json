@@ -1,0 +1,2023 @@
+{
+  "package_id": "aleph-t04-real-information-board-public-contract-v2",
+  "checkedAt": "2026-10-14T07:40:03.420Z",
+  "referenceMatches": true,
+  "syntheticOnly": true,
+  "liveRecordsUnchanged": true,
+  "liveRecordsSha256": "2e17ef648807fc843217cbeb1990bb56885aeee8e4757a27854909ec4f88acce",
+  "actualKstDates": [
+    "2026-10-14"
+  ],
+  "checks": 13,
+  "pass": true,
+  "results": [
+    {
+      "name": "normal A → B → D2",
+      "pass": true,
+      "steps": [
+        {
+          "fixture_id": "T04-NORMAL-D1-A",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 100,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 100,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T00:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 100,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": "2026-08-23T23:59:00.000Z",
+                  "fetched_at": "2026-08-24T00:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 100,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-23T23:59:00.000Z",
+              "fetched_at": "2026-08-24T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-A",
+              "virtual_now": "2026-08-24T00:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 1
+          }
+        },
+        {
+          "fixture_id": "T04-NORMAL-D1-B",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-B",
+              "virtual_now": "2026-08-24T09:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 2
+          }
+        },
+        {
+          "fixture_id": "T04-NORMAL-D2",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 120,
+          "row_count": 2,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24",
+            "demo-aleph-demo-index-2026-08-25"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              },
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-25",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-25",
+                "normalized_value": 120,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-25T00:00:00.000Z",
+                "last_fetched_at": "2026-08-25T00:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 120,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": "2026-08-24T23:59:00.000Z",
+                  "fetched_at": "2026-08-25T00:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-25"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 120,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-24T23:59:00.000Z",
+              "fetched_at": "2026-08-25T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-25"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": 15,
+            "last_comparison": {
+              "state": "comparable",
+              "direction": "increase",
+              "magnitude": 15,
+              "unit": "pt"
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D2",
+              "virtual_now": "2026-08-25T00:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 3
+          }
+        }
+      ],
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          },
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-25",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-25",
+            "normalized_value": 120,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-25T00:00:00.000Z",
+            "last_fetched_at": "2026-08-25T00:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 120,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-24T23:59:00.000Z",
+              "fetched_at": "2026-08-25T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-25"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 120,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": "2026-08-24T23:59:00.000Z",
+          "fetched_at": "2026-08-25T00:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-25"
+        },
+        "status": {
+          "freshness": "fresh",
+          "error_code": "none"
+        },
+        "last_delta": 15,
+        "last_comparison": {
+          "state": "comparable",
+          "direction": "increase",
+          "magnitude": 15,
+          "unit": "pt"
+        },
+        "last_run": {
+          "fixture_id": "T04-NORMAL-D2",
+          "virtual_now": "2026-08-25T00:00:00.000Z",
+          "outcome": "success",
+          "error_code": "none",
+          "retry_after_seconds": null
+        },
+        "sequence": 3
+      }
+    },
+    {
+      "name": "timeout",
+      "pass": true,
+      "steps": [
+        {
+          "fixture_id": "T04-NORMAL-D1-A",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 100,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 100,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T00:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 100,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": "2026-08-23T23:59:00.000Z",
+                  "fetched_at": "2026-08-24T00:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 100,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-23T23:59:00.000Z",
+              "fetched_at": "2026-08-24T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-A",
+              "virtual_now": "2026-08-24T00:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 1
+          }
+        },
+        {
+          "fixture_id": "T04-NORMAL-D1-B",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-B",
+              "virtual_now": "2026-08-24T09:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 2
+          }
+        },
+        {
+          "fixture_id": "T04-TIMEOUT",
+          "status": {
+            "freshness": "stale",
+            "error_code": "timeout"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "stale",
+              "error_code": "timeout"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-TIMEOUT",
+              "virtual_now": "2026-08-24T10:00:00.000Z",
+              "outcome": "error",
+              "error_code": "timeout",
+              "retry_after_seconds": null
+            },
+            "sequence": 3
+          }
+        }
+      ],
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 105,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": null,
+          "fetched_at": "2026-08-24T09:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-24"
+        },
+        "status": {
+          "freshness": "stale",
+          "error_code": "timeout"
+        },
+        "last_delta": null,
+        "last_comparison": {
+          "state": "insufficient",
+          "direction": null,
+          "magnitude": null,
+          "unit": null
+        },
+        "last_run": {
+          "fixture_id": "T04-TIMEOUT",
+          "virtual_now": "2026-08-24T10:00:00.000Z",
+          "outcome": "error",
+          "error_code": "timeout",
+          "retry_after_seconds": null
+        },
+        "sequence": 3
+      }
+    },
+    {
+      "name": "timeout → recover D2 twice",
+      "pass": true,
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          },
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-25",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-25",
+            "normalized_value": 120,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-25T00:00:00.000Z",
+            "last_fetched_at": "2026-08-25T00:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 120,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-24T23:59:00.000Z",
+              "fetched_at": "2026-08-25T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-25"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 120,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": "2026-08-24T23:59:00.000Z",
+          "fetched_at": "2026-08-25T00:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-25"
+        },
+        "status": {
+          "freshness": "fresh",
+          "error_code": "none"
+        },
+        "last_delta": 15,
+        "last_comparison": {
+          "state": "comparable",
+          "direction": "increase",
+          "magnitude": 15,
+          "unit": "pt"
+        },
+        "last_run": {
+          "fixture_id": "T04-RECOVER-D2",
+          "virtual_now": "2026-08-25T00:00:00.000Z",
+          "outcome": "success",
+          "error_code": "none",
+          "retry_after_seconds": null
+        },
+        "sequence": 5
+      }
+    },
+    {
+      "name": "auth-401",
+      "pass": true,
+      "steps": [
+        {
+          "fixture_id": "T04-NORMAL-D1-A",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 100,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 100,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T00:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 100,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": "2026-08-23T23:59:00.000Z",
+                  "fetched_at": "2026-08-24T00:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 100,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-23T23:59:00.000Z",
+              "fetched_at": "2026-08-24T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-A",
+              "virtual_now": "2026-08-24T00:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 1
+          }
+        },
+        {
+          "fixture_id": "T04-NORMAL-D1-B",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-B",
+              "virtual_now": "2026-08-24T09:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 2
+          }
+        },
+        {
+          "fixture_id": "T04-AUTH-401",
+          "status": {
+            "freshness": "stale",
+            "error_code": "auth"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "stale",
+              "error_code": "auth"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-AUTH-401",
+              "virtual_now": "2026-08-24T10:01:00.000Z",
+              "outcome": "error",
+              "error_code": "auth",
+              "retry_after_seconds": null
+            },
+            "sequence": 3
+          }
+        }
+      ],
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 105,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": null,
+          "fetched_at": "2026-08-24T09:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-24"
+        },
+        "status": {
+          "freshness": "stale",
+          "error_code": "auth"
+        },
+        "last_delta": null,
+        "last_comparison": {
+          "state": "insufficient",
+          "direction": null,
+          "magnitude": null,
+          "unit": null
+        },
+        "last_run": {
+          "fixture_id": "T04-AUTH-401",
+          "virtual_now": "2026-08-24T10:01:00.000Z",
+          "outcome": "error",
+          "error_code": "auth",
+          "retry_after_seconds": null
+        },
+        "sequence": 3
+      }
+    },
+    {
+      "name": "auth-401 → recover D2 twice",
+      "pass": true,
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          },
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-25",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-25",
+            "normalized_value": 120,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-25T00:00:00.000Z",
+            "last_fetched_at": "2026-08-25T00:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 120,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-24T23:59:00.000Z",
+              "fetched_at": "2026-08-25T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-25"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 120,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": "2026-08-24T23:59:00.000Z",
+          "fetched_at": "2026-08-25T00:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-25"
+        },
+        "status": {
+          "freshness": "fresh",
+          "error_code": "none"
+        },
+        "last_delta": 15,
+        "last_comparison": {
+          "state": "comparable",
+          "direction": "increase",
+          "magnitude": 15,
+          "unit": "pt"
+        },
+        "last_run": {
+          "fixture_id": "T04-RECOVER-D2",
+          "virtual_now": "2026-08-25T00:00:00.000Z",
+          "outcome": "success",
+          "error_code": "none",
+          "retry_after_seconds": null
+        },
+        "sequence": 5
+      }
+    },
+    {
+      "name": "rate-429",
+      "pass": true,
+      "steps": [
+        {
+          "fixture_id": "T04-NORMAL-D1-A",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 100,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 100,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T00:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 100,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": "2026-08-23T23:59:00.000Z",
+                  "fetched_at": "2026-08-24T00:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 100,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-23T23:59:00.000Z",
+              "fetched_at": "2026-08-24T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-A",
+              "virtual_now": "2026-08-24T00:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 1
+          }
+        },
+        {
+          "fixture_id": "T04-NORMAL-D1-B",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-B",
+              "virtual_now": "2026-08-24T09:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 2
+          }
+        },
+        {
+          "fixture_id": "T04-RATE-429",
+          "status": {
+            "freshness": "stale",
+            "error_code": "rate_limit"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "stale",
+              "error_code": "rate_limit"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-RATE-429",
+              "virtual_now": "2026-08-24T10:02:00.000Z",
+              "outcome": "error",
+              "error_code": "rate_limit",
+              "retry_after_seconds": 60
+            },
+            "sequence": 3
+          }
+        }
+      ],
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 105,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": null,
+          "fetched_at": "2026-08-24T09:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-24"
+        },
+        "status": {
+          "freshness": "stale",
+          "error_code": "rate_limit"
+        },
+        "last_delta": null,
+        "last_comparison": {
+          "state": "insufficient",
+          "direction": null,
+          "magnitude": null,
+          "unit": null
+        },
+        "last_run": {
+          "fixture_id": "T04-RATE-429",
+          "virtual_now": "2026-08-24T10:02:00.000Z",
+          "outcome": "error",
+          "error_code": "rate_limit",
+          "retry_after_seconds": 60
+        },
+        "sequence": 3
+      }
+    },
+    {
+      "name": "rate-429 → recover D2 twice",
+      "pass": true,
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          },
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-25",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-25",
+            "normalized_value": 120,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-25T00:00:00.000Z",
+            "last_fetched_at": "2026-08-25T00:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 120,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-24T23:59:00.000Z",
+              "fetched_at": "2026-08-25T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-25"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 120,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": "2026-08-24T23:59:00.000Z",
+          "fetched_at": "2026-08-25T00:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-25"
+        },
+        "status": {
+          "freshness": "fresh",
+          "error_code": "none"
+        },
+        "last_delta": 15,
+        "last_comparison": {
+          "state": "comparable",
+          "direction": "increase",
+          "magnitude": 15,
+          "unit": "pt"
+        },
+        "last_run": {
+          "fixture_id": "T04-RECOVER-D2",
+          "virtual_now": "2026-08-25T00:00:00.000Z",
+          "outcome": "success",
+          "error_code": "none",
+          "retry_after_seconds": null
+        },
+        "sequence": 5
+      }
+    },
+    {
+      "name": "offline",
+      "pass": true,
+      "steps": [
+        {
+          "fixture_id": "T04-NORMAL-D1-A",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 100,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 100,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T00:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 100,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": "2026-08-23T23:59:00.000Z",
+                  "fetched_at": "2026-08-24T00:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 100,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-23T23:59:00.000Z",
+              "fetched_at": "2026-08-24T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-A",
+              "virtual_now": "2026-08-24T00:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 1
+          }
+        },
+        {
+          "fixture_id": "T04-NORMAL-D1-B",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-B",
+              "virtual_now": "2026-08-24T09:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 2
+          }
+        },
+        {
+          "fixture_id": "T04-OFFLINE",
+          "status": {
+            "freshness": "stale",
+            "error_code": "offline"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "stale",
+              "error_code": "offline"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-OFFLINE",
+              "virtual_now": "2026-08-24T10:03:00.000Z",
+              "outcome": "error",
+              "error_code": "offline",
+              "retry_after_seconds": null
+            },
+            "sequence": 3
+          }
+        }
+      ],
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 105,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": null,
+          "fetched_at": "2026-08-24T09:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-24"
+        },
+        "status": {
+          "freshness": "stale",
+          "error_code": "offline"
+        },
+        "last_delta": null,
+        "last_comparison": {
+          "state": "insufficient",
+          "direction": null,
+          "magnitude": null,
+          "unit": null
+        },
+        "last_run": {
+          "fixture_id": "T04-OFFLINE",
+          "virtual_now": "2026-08-24T10:03:00.000Z",
+          "outcome": "error",
+          "error_code": "offline",
+          "retry_after_seconds": null
+        },
+        "sequence": 3
+      }
+    },
+    {
+      "name": "offline → recover D2 twice",
+      "pass": true,
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          },
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-25",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-25",
+            "normalized_value": 120,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-25T00:00:00.000Z",
+            "last_fetched_at": "2026-08-25T00:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 120,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-24T23:59:00.000Z",
+              "fetched_at": "2026-08-25T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-25"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 120,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": "2026-08-24T23:59:00.000Z",
+          "fetched_at": "2026-08-25T00:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-25"
+        },
+        "status": {
+          "freshness": "fresh",
+          "error_code": "none"
+        },
+        "last_delta": 15,
+        "last_comparison": {
+          "state": "comparable",
+          "direction": "increase",
+          "magnitude": 15,
+          "unit": "pt"
+        },
+        "last_run": {
+          "fixture_id": "T04-RECOVER-D2",
+          "virtual_now": "2026-08-25T00:00:00.000Z",
+          "outcome": "success",
+          "error_code": "none",
+          "retry_after_seconds": null
+        },
+        "sequence": 5
+      }
+    },
+    {
+      "name": "schema-break",
+      "pass": true,
+      "steps": [
+        {
+          "fixture_id": "T04-NORMAL-D1-A",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 100,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 100,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T00:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 100,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": "2026-08-23T23:59:00.000Z",
+                  "fetched_at": "2026-08-24T00:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 100,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-23T23:59:00.000Z",
+              "fetched_at": "2026-08-24T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-A",
+              "virtual_now": "2026-08-24T00:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 1
+          }
+        },
+        {
+          "fixture_id": "T04-NORMAL-D1-B",
+          "status": {
+            "freshness": "fresh",
+            "error_code": "none"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "fresh",
+              "error_code": "none"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-NORMAL-D1-B",
+              "virtual_now": "2026-08-24T09:00:00.000Z",
+              "outcome": "success",
+              "error_code": "none",
+              "retry_after_seconds": null
+            },
+            "sequence": 2
+          }
+        },
+        {
+          "fixture_id": "T04-SCHEMA-BREAK",
+          "status": {
+            "freshness": "stale",
+            "error_code": "schema_error"
+          },
+          "current_value": 105,
+          "row_count": 1,
+          "record_ids": [
+            "demo-aleph-demo-index-2026-08-24"
+          ],
+          "state": {
+            "schema_version": "aleph-t04-evaluation-state-v1",
+            "daily_readings": [
+              {
+                "record_id": "demo-aleph-demo-index-2026-08-24",
+                "signal_id": "aleph-demo-index",
+                "record_date": "2026-08-24",
+                "normalized_value": 105,
+                "unit": "pt",
+                "first_fetched_at": "2026-08-24T00:00:00.000Z",
+                "last_fetched_at": "2026-08-24T09:00:00.000Z",
+                "reading": {
+                  "signal_id": "aleph-demo-index",
+                  "normalized_value": 105,
+                  "unit": "pt",
+                  "source_name": "ALEPH 결정론 replay",
+                  "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+                  "source_time": null,
+                  "fetched_at": "2026-08-24T09:00:00.000Z",
+                  "record_timezone": "Asia/Seoul",
+                  "record_date": "2026-08-24"
+                }
+              }
+            ],
+            "current_reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            },
+            "status": {
+              "freshness": "stale",
+              "error_code": "schema_error"
+            },
+            "last_delta": null,
+            "last_comparison": {
+              "state": "insufficient",
+              "direction": null,
+              "magnitude": null,
+              "unit": null
+            },
+            "last_run": {
+              "fixture_id": "T04-SCHEMA-BREAK",
+              "virtual_now": "2026-08-24T10:04:00.000Z",
+              "outcome": "error",
+              "error_code": "schema_error",
+              "retry_after_seconds": null
+            },
+            "sequence": 3
+          }
+        }
+      ],
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 105,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": null,
+          "fetched_at": "2026-08-24T09:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-24"
+        },
+        "status": {
+          "freshness": "stale",
+          "error_code": "schema_error"
+        },
+        "last_delta": null,
+        "last_comparison": {
+          "state": "insufficient",
+          "direction": null,
+          "magnitude": null,
+          "unit": null
+        },
+        "last_run": {
+          "fixture_id": "T04-SCHEMA-BREAK",
+          "virtual_now": "2026-08-24T10:04:00.000Z",
+          "outcome": "error",
+          "error_code": "schema_error",
+          "retry_after_seconds": null
+        },
+        "sequence": 3
+      }
+    },
+    {
+      "name": "schema-break → recover D2 twice",
+      "pass": true,
+      "state": {
+        "schema_version": "aleph-t04-evaluation-state-v1",
+        "daily_readings": [
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-24",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-24",
+            "normalized_value": 105,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-24T00:00:00.000Z",
+            "last_fetched_at": "2026-08-24T09:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 105,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": null,
+              "fetched_at": "2026-08-24T09:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-24"
+            }
+          },
+          {
+            "record_id": "demo-aleph-demo-index-2026-08-25",
+            "signal_id": "aleph-demo-index",
+            "record_date": "2026-08-25",
+            "normalized_value": 120,
+            "unit": "pt",
+            "first_fetched_at": "2026-08-25T00:00:00.000Z",
+            "last_fetched_at": "2026-08-25T00:00:00.000Z",
+            "reading": {
+              "signal_id": "aleph-demo-index",
+              "normalized_value": 120,
+              "unit": "pt",
+              "source_name": "ALEPH 결정론 replay",
+              "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+              "source_time": "2026-08-24T23:59:00.000Z",
+              "fetched_at": "2026-08-25T00:00:00.000Z",
+              "record_timezone": "Asia/Seoul",
+              "record_date": "2026-08-25"
+            }
+          }
+        ],
+        "current_reading": {
+          "signal_id": "aleph-demo-index",
+          "normalized_value": 120,
+          "unit": "pt",
+          "source_name": "ALEPH 결정론 replay",
+          "source_url": "https://fixtures.aleph.invalid/t04/demo-index",
+          "source_time": "2026-08-24T23:59:00.000Z",
+          "fetched_at": "2026-08-25T00:00:00.000Z",
+          "record_timezone": "Asia/Seoul",
+          "record_date": "2026-08-25"
+        },
+        "status": {
+          "freshness": "fresh",
+          "error_code": "none"
+        },
+        "last_delta": 15,
+        "last_comparison": {
+          "state": "comparable",
+          "direction": "increase",
+          "magnitude": 15,
+          "unit": "pt"
+        },
+        "last_run": {
+          "fixture_id": "T04-RECOVER-D2",
+          "virtual_now": "2026-08-25T00:00:00.000Z",
+          "outcome": "success",
+          "error_code": "none",
+          "retry_after_seconds": null
+        },
+        "sequence": 5
+      }
+    }
+  ]
+}

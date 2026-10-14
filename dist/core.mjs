@@ -20,12 +20,14 @@ export async function receive(fetcher = fetch, mode = 'live', now = new Date(), 
     else if(mode==='invalid') response = new Response('{"base":"JPY","quote":"KRW","date":"2026-10-13","rate":"oops"}');
     else if(mode==='stale') response = new Response('{"base":"JPY","quote":"KRW","date":"2000-01-01","rate":1200}');
     else response = await fetcher(API,{signal:controller.signal,cache:'no-store'});
+    if(response.status===401 || response.status===403) throw new Error('auth');
+    if(response.status===429) throw new Error('rate_limit');
     if(!response.ok) throw new Error('http');
     let data, rawResponse;
     try {rawResponse = await response.text(); data = JSON.parse(rawResponse);} catch {throw new Error('invalid');}
     return {ok:true,data:validate(data,now,last),rawResponse};
   } catch(error) {
-    return {ok:false,reason:controller.signal.aborted ? 'timeout' : ['http','invalid','stale','timeout'].includes(error.message) ? error.message : 'network'};
+    return {ok:false,reason:controller.signal.aborted ? 'timeout' : ['auth','rate_limit','http','invalid','stale','timeout'].includes(error.message) ? error.message : 'network'};
   } finally {clearTimeout(timer);}
 }
 export function compare(records, today = kstDate()) {
