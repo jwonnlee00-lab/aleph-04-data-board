@@ -9,7 +9,7 @@ const last=store.records.at(-1)?.value ?? null;
 const result=await receive(fetch,'live',now,last);
 store.lastAttempt={at:now.toISOString(),kstDate:kstDate(now),ok:result.ok,reason:result.ok?null:result.reason};
 if(result.ok && !store.records.some(r=>r.kstDate===kstDate(now))) {
-  store.records.push({kstDate:kstDate(now),collectedAt:now.toISOString(),source:API,value:result.data,sha256:createHash('sha256').update(JSON.stringify(result.data)).digest('hex')});
+  store.records.push({kstDate:kstDate(now),collectedAt:now.toISOString(),source:API,rawResponse:result.rawResponse,value:result.data,sha256:createHash('sha256').update(JSON.stringify(result.data)).digest('hex')});
   store.records.sort((a,b)=>a.kstDate.localeCompare(b.kstDate));
 }
 await mkdir(new URL('../dist/',import.meta.url),{recursive:true});

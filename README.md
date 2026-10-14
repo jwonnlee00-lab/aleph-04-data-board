@@ -1,10 +1,10 @@
 # 오늘의 진짜 정보판 — 데이터가 안 올 때
 
-과제 4. 공개 원천의 USD/KRW 일별 기준환율을 실제로 수집하고, 실패 시 마지막 정상값과 일별 기록을 보존합니다.
+과제 4. 공개 원천의 JPY/KRW 일별 기준환율을 실제로 수집하고, 실패 시 마지막 정상값과 일별 기록을 보존합니다.
 
 - 결과물: https://honest-daily-board-krw-20261014.jwonnlee00.chatgpt.site
 - 소스: https://github.com/jwonnlee00-lab/aleph-04-data-board
-- 공개 원천: https://api.frankfurter.dev/v2/providers/ecb/rate/USD/KRW
+- 공개 원천: https://api.frankfurter.dev/v2/providers/ecb/rate/JPY/KRW
 - 원천 설명: https://frankfurter.dev/
 
 ## 짧은 확인 방법 — 4줄

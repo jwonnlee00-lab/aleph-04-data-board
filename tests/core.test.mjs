@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {kstDate,receive,validate,compare} from '../dist/core.mjs';
 const now=new Date('2026-10-14T07:00:00Z');
-const value={base:'USD',quote:'KRW',date:'2026-10-13',rate:1341.45};
+const value={base:'JPY',quote:'KRW',date:'2026-10-13',rate:1341.45};
 test('KST midnight boundary',()=>{assert.equal(kstDate(new Date('2026-10-13T15:00:00Z')),'2026-10-14');});
 test('five synthetic failures leave last good value untouched',async()=>{for(const reason of ['network','timeout','http','invalid','stale']){const last={...value};const r=await receive(()=>assert.fail('Synthetic mode must not fetch'),reason,now,last,5);assert.deepEqual(r,{ok:false,reason});assert.deepEqual(last,value);}});
 test('reject invalid dates, missing values, and future data',()=>{for(const bad of [{...value,date:'2026-02-30'},{...value,rate:null},{...value,date:'2026-10-15'},{...value,rate:-1}]) assert.throws(()=>validate(bad,now));});

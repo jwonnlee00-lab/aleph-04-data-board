@@ -1,6 +1,6 @@
 import {kstDate,receive,compare} from './core.mjs';
 const $=id=>document.getElementById(id);
-const KEY='aleph04-last-good-v1';
+const KEY='aleph04-jpy-last-good-v1';
 const SHARED='https://raw.githubusercontent.com/jwonnlee00-lab/aleph-04-data-board/main/dist/observations.json';
 let archive={version:1,records:[],lastAttempt:null},last=null,busy=false,realStatus='공유 기록 확인 중',realBadge='보존된 기록',realClass='warn',remoteFailed=false;
 const fmt=n=>n.toLocaleString('ko-KR',{minimumFractionDigits:2,maximumFractionDigits:2});
@@ -9,21 +9,27 @@ const messages={network:'연결에 실패했습니다. 오프라인·DNS·CORS �
 function setStatus(text,badge,cls=''){ $('status').textContent=text;$('badge').textContent=badge;$('badge').className='badge '+cls; }
 function render(){
   $('clock').textContent=kstDate()+' · KST';
-  $('rate').textContent=last?fmt(last.value.rate):'—';
+  $('rate').textContent=last?fmt(last.value.rate*100):'—';
   $('source-date').textContent=last?.value.date??'미확인';
   $('received').textContent=last?time(last.collectedAt):'정상 수신 기록 없음';
   const comparison=compare(archive.records);
-  $('delta').textContent=comparison?`어제 대비 ${comparison.delta>0?'+':''}${fmt(comparison.delta)}원 (${comparison.percent>0?'+':''}${comparison.percent.toFixed(2)}%) · 실제 일별 첫 기록 비교`:'어제 대비 미확인 · 오늘과 어제의 실제 기록이 모두 필요합니다.';
+  $('delta').textContent=comparison?`어제 대비 ${comparison.delta>0?'+':''}${fmt(comparison.delta*100)}원 / 100엔 (${comparison.percent>0?'+':''}${comparison.percent.toFixed(2)}%) · 실제 일별 첫 기록 비교`:'어제 대비 미확인 · 오늘과 어제의 실제 기록이 모두 필요합니다.';
   $('records').replaceChildren();
   for(const record of [...archive.records].reverse()){
     const row=document.createElement('tr');
-    for(const val of [record.kstDate,record.value.date,fmt(record.value.rate)]){const cell=document.createElement('td');cell.textContent=val;row.append(cell);}
+    for(const val of [record.kstDate,record.value.date,fmt(record.value.rate*100)]){const cell=document.createElement('td');cell.textContent=val;row.append(cell);}
     $('records').append(row);
   }
   if(!archive.records.length){const row=document.createElement('tr'),cell=document.createElement('td');cell.colSpan=3;cell.textContent='아직 공유된 실제 기록이 없습니다.';row.append(cell);$('records').append(row);}
   const count=new Set(archive.records.map(r=>r.kstDate)).size;
   $('progress').textContent=`서로 다른 실제 KST 날짜 ${count}건 / 최소 2건 ${count>=2?'✓':'· 두 번째 실제 수집 대기'}`;
   $('record-status').textContent=(remoteFailed?'공유 기록 서버 조회 실패 · 배포에 포함된 보존본을 표시합니다. ':'GitHub에 보존된 공유 기록입니다. ')+(archive.lastAttempt?`최근 수집: ${time(archive.lastAttempt.at)} · ${archive.lastAttempt.ok?'정상':`실패 (${archive.lastAttempt.reason})`}`:'수집 상태 미확인');
+  const proof=archive.records[0];
+  if(proof){
+    $('proof-raw').textContent=proof.rawResponse??'原 응답 미보존';
+    $('proof-stored').textContent=JSON.stringify(proof.value,null,2);
+    $('proof-screen').textContent=`${fmt(proof.value.rate*100)} 원 / 100엔\n${proof.value.rate} 원 / 1엔 × 100\n원천 기준일: ${proof.value.date}\n수집 시각: ${time(proof.collectedAt)} KST`;
+  }
 }
 function persist(){try{localStorage.setItem(KEY,JSON.stringify(last));}catch{$('storage').textContent='브라우저 저장 실패 · 공유 기록은 보존됩니다.';}}
 function lock(v){busy=v;for(const id of ['refresh','simulate','restore'])$(id).disabled=v;}
@@ -46,13 +52,13 @@ async function refresh(mode='live'){
   lock(false);
 }
 async function getJSON(url){const response=await fetch(url,{cache:'no-store',signal:AbortSignal.timeout(8000)});if(!response.ok)throw Error('fetch');return response.json();}
-function validArchive(data){return data?.version===1 && Array.isArray(data.records) && data.records.every(r=>/^\d{4}-\d{2}-\d{2}$/.test(r.kstDate)&&Number.isFinite(Date.parse(r.collectedAt))&&r.value?.base==='USD'&&r.value?.quote==='KRW'&&typeof r.value.rate==='number'&&Number.isFinite(r.value.rate)&&r.value.rate>0&&/^\d{4}-\d{2}-\d{2}$/.test(r.value.date));}
+function validArchive(data){return data?.version===1 && Array.isArray(data.records) && data.records.every(r=>/^\d{4}-\d{2}-\d{2}$/.test(r.kstDate)&&Number.isFinite(Date.parse(r.collectedAt))&&r.value?.base==='JPY'&&r.value?.quote==='KRW'&&typeof r.value.rate==='number'&&Number.isFinite(r.value.rate)&&r.value.rate>0&&/^\d{4}-\d{2}-\d{2}$/.test(r.value.date));}
 async function boot(){
   try{const data=await getJSON('./observations.json');if(!validArchive(data))throw Error();archive=data;}catch{realStatus='배포에 포함된 기록도 읽지 못했습니다.';}
   try{const data=await getJSON(SHARED);if(!validArchive(data))throw Error();archive=data;}catch{remoteFailed=true;}
   archive.records.sort((a,b)=>a.kstDate.localeCompare(b.kstDate));
   last=archive.records.at(-1)??null;
-  try{const cached=JSON.parse(localStorage.getItem(KEY));if(cached?.value?.base==='USD'&&cached.value.quote==='KRW'&&typeof cached.value.rate==='number'&&Number.isFinite(cached.value.rate)&&cached.value.rate>0&&Number.isFinite(Date.parse(cached.collectedAt))&&(!last||Date.parse(cached.collectedAt)>Date.parse(last.collectedAt)))last=cached;}catch{$('storage').textContent='브라우저 저장소 사용 불가 · 공유 기록으로 확인';}
+  try{const cached=JSON.parse(localStorage.getItem(KEY));if(cached?.value?.base==='JPY'&&cached.value.quote==='KRW'&&typeof cached.value.rate==='number'&&Number.isFinite(cached.value.rate)&&cached.value.rate>0&&Number.isFinite(Date.parse(cached.collectedAt))&&(!last||Date.parse(cached.collectedAt)>Date.parse(last.collectedAt)))last=cached;}catch{$('storage').textContent='브라우저 저장소 사용 불가 · 공유 기록으로 확인';}
   render();realStatus=last?'보존된 마지막 정상값입니다. 아직 이번 방문의 원천 응답을 확인하지 않았습니다.':'정상 수신 기록이 없습니다.';setStatus(realStatus,realBadge,realClass);
   await refresh();
 }

@@ -3,19 +3,20 @@
   "records": [
     {
       "kstDate": "2026-10-14",
-      "collectedAt": "2026-10-14T07:11:22.562Z",
-      "source": "https://api.frankfurter.dev/v2/providers/ecb/rate/USD/KRW",
+      "collectedAt": "2026-10-14T07:23:06.017Z",
+      "source": "https://api.frankfurter.dev/v2/providers/ecb/rate/JPY/KRW",
+      "rawResponse": "{\"date\":\"2026-10-13\",\"base\":\"JPY\",\"quote\":\"KRW\",\"rate\":8.4835}",
       "value": {
         "date": "2026-10-13",
-        "base": "USD",
+        "base": "JPY",
         "quote": "KRW",
-        "rate": 1341.45
+        "rate": 8.4835
       },
-      "sha256": "d849e03d1c7ed8b059dd6b5dc68e674f0fe6d850b5501e5ebf8226b110dca7d5"
+      "sha256": "7011faba4a0116df4bb66850c94240e498f77e679754f1051ff8998ecfeb2c6a"
     }
   ],
   "lastAttempt": {
-    "at": "2026-10-14T07:11:22.562Z",
+    "at": "2026-10-14T07:23:06.017Z",
     "kstDate": "2026-10-14",
     "ok": true,
     "reason": null
