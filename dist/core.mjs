@@ -1,4 +1,5 @@
 export const API = 'https://api.frankfurter.dev/v2/providers/ecb/rate/JPY/KRW';
+export const hundredYen = rate => Number((rate*100).toFixed(2));
 export const kstDate = (now = new Date()) => new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
 export function validate(data, now = new Date(), last = null) {
   if (!data || data.base !== 'JPY' || data.quote !== 'KRW' || typeof data.rate !== 'number' || !Number.isFinite(data.rate) || data.rate <= 0 || !/^\d{4}-\d{2}-\d{2}$/.test(data.date || '')) throw new Error('invalid');
@@ -34,5 +35,7 @@ export function compare(records, today = kstDate()) {
   const a=records.find(r=>r.kstDate===today);
   const yesterday=new Date(Date.parse(today+'T00:00:00Z')-86400000).toISOString().slice(0,10);
   const b=records.find(r=>r.kstDate===yesterday);
-  return a && b ? {delta:a.value.rate-b.value.rate,percent:(a.value.rate/b.value.rate-1)*100,today:a,yesterday:b} : null;
+  if(!a || !b)return null;
+  const current=hundredYen(a.value.rate),previous=hundredYen(b.value.rate);
+  return {delta:(Math.round(current*100)-Math.round(previous*100))/100,percent:(current/previous-1)*100,unit:'KRW/100JPY',today:a,yesterday:b};
 }

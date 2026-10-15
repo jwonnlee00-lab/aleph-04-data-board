@@ -1,4 +1,4 @@
-import {kstDate,receive,compare,API} from './core.mjs';
+import {kstDate,receive,compare,API,hundredYen} from './core.mjs';
 import {resetEvaluationState,applySuccessfulReading,applyError} from './state.mjs';
 import {normalizeLive} from './daily.mjs';
 const $=id=>document.getElementById(id);
@@ -15,15 +15,15 @@ messages.rate_limit='외부 원천의 호출 제한(429)입니다. 반복 호출
 function setStatus(text,badge,cls=''){ $('status').textContent=text;$('badge').textContent=badge;$('badge').className='badge '+cls; }
 function render(){
   $('clock').textContent=kstDate()+' · KST';
-  $('rate').textContent=last?fmt(last.value.rate*100):'—';
+  $('rate').textContent=last?fmt(hundredYen(last.value.rate)):'—';
   $('source-date').textContent=last?.value.date??'미확인';
   $('received').textContent=last?time(last.collectedAt):'정상 수신 기록 없음';
   const comparison=compare(archive.records);
-  $('delta').textContent=comparison?`어제 대비 ${comparison.delta>0?'+':''}${fmt(comparison.delta*100)}원 / 100엔 (${comparison.percent>0?'+':''}${comparison.percent.toFixed(2)}%) · 실제 일별 최신 기록 비교`:'어제 대비 미확인 · 오늘과 어제의 실제 기록이 모두 필요합니다.';
+  $('delta').textContent=comparison?`어제 대비 ${comparison.delta>0?'+':''}${fmt(comparison.delta)}원 / 100엔 (${comparison.percent>0?'+':''}${comparison.percent.toFixed(2)}%) · 실제 일별 최신 기록 비교`:'어제 대비 미확인 · 오늘과 어제의 실제 기록이 모두 필요합니다.';
   $('records').replaceChildren();
   for(const record of [...archive.records].reverse()){
     const row=document.createElement('tr');
-    for(const val of [record.kstDate,record.value.date,fmt(record.value.rate*100)]){const cell=document.createElement('td');cell.textContent=val;row.append(cell);}
+    for(const val of [record.kstDate,record.value.date,fmt(hundredYen(record.value.rate))]){const cell=document.createElement('td');cell.textContent=val;row.append(cell);}
     $('records').append(row);
   }
   if(!archive.records.length){const row=document.createElement('tr'),cell=document.createElement('td');cell.colSpan=3;cell.textContent='아직 공유된 실제 기록이 없습니다.';row.append(cell);$('records').append(row);}

@@ -1,7 +1,7 @@
-import {kstDate,API} from './core.mjs';
+import {kstDate,API,hundredYen} from './core.mjs';
 import {applySuccessfulReading,resetEvaluationState} from './state.mjs';
 export const SIGNAL='jpy-krw-100';
-export function normalizeLive(value,collectedAt){return {signal_id:SIGNAL,normalized_value:value.rate*100,unit:'KRW/100JPY',source_name:'Frankfurter / ECB',source_url:API,source_time:null,fetched_at:collectedAt,record_timezone:'Asia/Seoul',record_date:kstDate(new Date(collectedAt))};}
+export function normalizeLive(value,collectedAt){return {signal_id:SIGNAL,normalized_value:hundredYen(value.rate),unit:'KRW/100JPY',source_name:'Frankfurter / ECB',source_url:API,source_time:null,fetched_at:collectedAt,record_timezone:'Asia/Seoul',record_date:kstDate(new Date(collectedAt))};}
 export function upsertDaily(input,value,collectedAt,rawResponse){
  const store=structuredClone(input);
  if(!store.firstObservation && store.records.length)store.firstObservation=structuredClone(store.records[0]);

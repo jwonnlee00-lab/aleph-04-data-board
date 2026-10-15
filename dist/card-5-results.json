@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "checkedAt": "2026-10-15T00:22:40.102Z",
+  "actualDates": [
+    "2026-10-14",
+    "2026-10-15"
+  ],
+  "actualRecordCount": 2,
+  "normalizedValues": [
+    848.35,
+    843.64
+  ],
+  "unit": "KRW/100JPY",
+  "delta": -4.71,
+  "percent": -0.5551953792656383,
+  "calculation": "843.64 - 848.35 = -4.71",
+  "sourceTimeLimitation": "Source provides date only; exact timestamp is null.",
+  "platformReceiptsVerified": false
+}
