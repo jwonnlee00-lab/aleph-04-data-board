@@ -33,7 +33,7 @@
       "record_id": "live-jpy-krw-100-2026-10-15",
       "kstDate": "2026-10-15",
       "firstCollectedAt": "2026-10-15T00:21:17.538Z",
-      "collectedAt": "2026-10-15T00:21:17.538Z",
+      "collectedAt": "2026-10-15T12:39:19.856Z",
       "source": "https://api.frankfurter.dev/v2/providers/ecb/rate/JPY/KRW",
       "rawResponse": "{\"date\":\"2026-10-14\",\"base\":\"JPY\",\"quote\":\"KRW\",\"rate\":8.4364}",
       "value": {
@@ -49,7 +49,7 @@
         "source_name": "Frankfurter / ECB",
         "source_url": "https://api.frankfurter.dev/v2/providers/ecb/rate/JPY/KRW",
         "source_time": null,
-        "fetched_at": "2026-10-15T00:21:17.538Z",
+        "fetched_at": "2026-10-15T12:39:19.856Z",
         "record_timezone": "Asia/Seoul",
         "record_date": "2026-10-15"
       },
@@ -57,7 +57,7 @@
     }
   ],
   "lastAttempt": {
-    "at": "2026-10-15T00:21:17.538Z",
+    "at": "2026-10-15T12:39:19.856Z",
     "kstDate": "2026-10-15",
     "ok": true,
     "reason": null
