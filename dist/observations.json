@@ -216,11 +216,38 @@
         "record_date": "2026-10-21"
       },
       "sha256": "6494b68649436bbac225d89b8f2e2057d5b86fdd6803c8a7e950a9a228218bf5"
+    },
+    {
+      "signal_id": "jpy-krw-100",
+      "record_id": "live-jpy-krw-100-2026-10-22",
+      "kstDate": "2026-10-22",
+      "firstCollectedAt": "2026-10-22T12:58:14.836Z",
+      "collectedAt": "2026-10-22T12:58:14.836Z",
+      "source": "https://api.frankfurter.dev/v2/providers/ecb/rate/JPY/KRW",
+      "rawResponse": "{\"date\":\"2026-10-21\",\"base\":\"JPY\",\"quote\":\"KRW\",\"rate\":8.3962}",
+      "value": {
+        "date": "2026-10-21",
+        "base": "JPY",
+        "quote": "KRW",
+        "rate": 8.3962
+      },
+      "normalized_reading": {
+        "signal_id": "jpy-krw-100",
+        "normalized_value": 839.62,
+        "unit": "KRW/100JPY",
+        "source_name": "Frankfurter / ECB",
+        "source_url": "https://api.frankfurter.dev/v2/providers/ecb/rate/JPY/KRW",
+        "source_time": null,
+        "fetched_at": "2026-10-22T12:58:14.836Z",
+        "record_timezone": "Asia/Seoul",
+        "record_date": "2026-10-22"
+      },
+      "sha256": "b9399701cf49344530469c6a2084380af41f612ac3fdd89f735ee4f99361bb44"
     }
   ],
   "lastAttempt": {
-    "at": "2026-10-21T12:56:12.120Z",
-    "kstDate": "2026-10-21",
+    "at": "2026-10-22T12:58:14.836Z",
+    "kstDate": "2026-10-22",
     "ok": true,
     "reason": null
   },
