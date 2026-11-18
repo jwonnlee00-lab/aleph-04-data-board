@@ -894,10 +894,10 @@
     }
   ],
   "lastAttempt": {
-    "at": "2026-11-17T16:52:41.789Z",
-    "kstDate": "2026-11-18",
-    "ok": true,
-    "reason": null
+    "at": "2026-11-18T16:26:55.138Z",
+    "kstDate": "2026-11-19",
+    "ok": false,
+    "reason": "timeout"
   },
   "firstObservation": {
     "kstDate": "2026-10-14",
